@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@config './tailwind.config.js';
+
+/* Components layer for reusable components */
+@layer components {
+  main {
+    @apply p-20;
+  }
+}
