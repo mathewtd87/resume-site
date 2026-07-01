@@ -20,6 +20,14 @@
     @apply font-label text-label-caps bg-surface-container text-on-surface-variant px-3 py-1 rounded tracking-widest uppercase;
   }
 
+  .chip-primary {
+    @apply bg-secondary-container text-on-secondary-container border border-accent/30;
+  }
+
+  .skill-group-label {
+    @apply font-label text-label-caps text-secondary tracking-widest uppercase text-xs;
+  }
+
   /* Date badge on experience entries */
   .date-badge {
     @apply font-label text-label-caps text-accent bg-surface-container px-3 py-1 rounded text-xs whitespace-nowrap self-start;
@@ -33,4 +41,21 @@
   /* Font helpers */
   .font-heading { font-family: 'Manrope', sans-serif; }
   .font-label   { font-family: 'Space Grotesk', monospace; }
+
+  /* Header action buttons */
+  .header-btn {
+    @apply inline-flex items-center gap-2 font-label text-label-caps text-on-primary border border-on-primary/25 rounded-lg px-4 py-2.5 tracking-wider transition-all duration-200 hover:border-accent hover:text-accent hover:bg-white/5;
+  }
+
+  .header-btn svg {
+    @apply shrink-0 opacity-80;
+  }
+
+  .header-btn-primary {
+    @apply bg-accent border-accent text-on-primary hover:bg-accent-dim hover:border-accent-dim hover:text-on-primary;
+  }
+
+  .header-btn:disabled {
+    @apply opacity-60 cursor-not-allowed hover:bg-accent hover:border-accent hover:text-on-primary;
+  }
 }
