@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathew — Resume</title>
+    <title>Mathew Turner-Dauncey - Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Work+Sans:wght@400;500&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
@@ -12,57 +12,122 @@
         body { font-family: 'Work Sans', sans-serif; }
         h1, h2, h3 { font-family: 'Manrope', sans-serif; }
         .font-label { font-family: 'Space Grotesk', monospace; }
+
+        .testimonial-slide {
+            display: none;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background min-h-screen">
 
-    <!-- ── HERO / HEADER ───────────────────────────────────────── -->
+    <!-- HERO / HEADER -->
     <header class="bg-primary text-on-primary py-16 px-6">
-        <div class="max-w-container mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-            <div>
-                <p class="font-label text-label-caps text-on-primary-container tracking-widest mb-3">Curriculum Vitae</p>
-                <h1 class="text-headline-lg font-heading font-bold leading-tight">Mathew Turner</h1>
-                <p class="text-body-lg text-on-primary-container mt-2">Senior Software Engineer &amp; Technical Consultant</p>
+        <div class="max-w-container mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div class="flex flex-col sm:flex-row items-center sm:items-center gap-6">
+                <img
+                    src="./assets/images/mtdheadshot.png"
+                    alt="Mathew Turner-Dauncey"
+                    class="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-lg shrink-0 border border-on-primary/20 shadow-card"
+                />
+                <div class="text-center sm:text-left">
+                    <p class="font-label text-label-caps text-on-primary-container tracking-widest mb-3">Curriculum Vitae</p>
+                    <h1 class="text-headline-lg font-heading font-bold leading-tight">Mathew Turner-Dauncey</h1>
+                    <p class="text-body-lg text-on-primary-container mt-2">Senior Software Engineer · Dedicated Problem Solver · AI Enthusiast</p>
+                </div>
             </div>
-            <div class="text-body-sm text-on-primary-container space-y-1 font-label">
-                <p>📍 Gold Coast, Australia</p>
-                <p>✉️ <a href="mailto:alex@example.com" class="underline decoration-accent hover:text-accent transition-colors">alex@example.com</a></p>
-                <p>🔗 <a href="https://github.com/alexmorgan" class="underline decoration-accent hover:text-accent transition-colors">github.com/alexmorgan</a></p>
-                <p>💼 <a href="https://linkedin.com/in/alexmorgan" class="underline decoration-accent hover:text-accent transition-colors">linkedin.com/in/alexmorgan</a></p>
+            <div class="flex flex-col items-start gap-4">
+                <p class="text-body-sm text-on-primary-container font-label">📍 Coolangatta, Queensland, Australia</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://github.com/mathewtd87" target="_blank" rel="noopener noreferrer" class="header-btn">
+                        GitHub
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/mtddeveloper" target="_blank" rel="noopener noreferrer" class="header-btn">
+                        LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                            <polyline points="15 3 21 3 21 9"/>
+                            <line x1="10" y1="14" x2="21" y2="3"/>
+                        </svg>
+                    </a>
+                    <a href="./assets/resume/MattTD_Resume_2026.pdf" download="MattTD_Resume_2026.pdf" class="header-btn header-btn-primary">
+                        Resume
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- ── MAIN CONTENT ────────────────────────────────────────── -->
+    <!-- MAIN CONTENT -->
     <main class="max-w-container mx-auto px-6 py-12 space-y-16">
 
         <!-- PROFILE SUMMARY -->
         <section>
             <h2 class="section-title">Profile</h2>
             <p class="text-body-lg text-on-surface max-w-3xl leading-relaxed">
-                A results-driven software engineer with over a decade of experience architecting and delivering scalable web platforms, cloud infrastructure, and data-intensive applications. Passionate about clean code, developer experience, and building products that genuinely improve people's lives.
+                Senior Software &amp; Product Engineer with 6+ years of experience delivering scalable software solutions across fintech, payments, and web platforms. Experienced in full-stack development, solution architecture, and UI/UX from greenfield builds to upgrading legacy applications for growing demand.
             </p>
         </section>
 
         <!-- SKILLS -->
         <section>
             <h2 class="section-title">Core Skills</h2>
-            <div class="flex flex-wrap gap-2 mt-4">
-                <!-- Tags -->
-                <span class="chip">TypeScript</span>
-                <span class="chip">React</span>
-                <span class="chip">Node.js</span>
-                <span class="chip">Python</span>
-                <span class="chip">PostgreSQL</span>
-                <span class="chip">AWS</span>
-                <span class="chip">Docker</span>
-                <span class="chip">Kubernetes</span>
-                <span class="chip">GraphQL</span>
-                <span class="chip">REST APIs</span>
-                <span class="chip">CI/CD</span>
-                <span class="chip">Terraform</span>
-                <span class="chip">TDD</span>
-                <span class="chip">Agile / Scrum</span>
+            <div class="space-y-6 mt-4">
+
+                <div>
+                    <p class="skill-group-label">Primary stack</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="chip chip-primary">TypeScript</span>
+                        <span class="chip chip-primary">React</span>
+                        <span class="chip chip-primary">C#</span>
+                        <span class="chip chip-primary">.NET</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="skill-group-label">Domain</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="chip">UI/UX Design</span>
+                        <span class="chip">API Development</span>
+                        <span class="chip">Full-Stack Development</span>
+                        <span class="chip">Solution Architecture</span>
+                        <span class="chip">DevOps CI/CD</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="skill-group-label">Also worked with (but not limited to...)</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="chip">Tailwind CSS</span>
+                        <span class="chip">AngularJs</span>
+                        <span class="chip">NodeJs</span>
+                        <span class="chip">PHP</span>
+                        <span class="chip">Laravel</span>
+                        <span class="chip">Vue.js</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card mt-6">
+                <h3 class="text-headline-sm font-heading mb-3">AI-Assisted Development</h3>
+                <ul class="body-list">
+                    <li>Use Cursor and GitHub Copilot daily for scaffolding, refactors, and exploring unfamiliar codebases faster.</li>
+                    <li>Treat AI as a pair-programming tool: I review, test, and own every change before it ships.</li>
+                    <li>Apply it to architecture exploration, boilerplate reduction, and test and debug workflows.</li>
+                </ul>
             </div>
         </section>
 
@@ -71,98 +136,114 @@
             <h2 class="section-title">Experience</h2>
             <div class="space-y-6 mt-4">
 
-                <!-- Job 1 -->
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">Principal Software Engineer</h3>
-                            <p class="text-body-md text-secondary font-medium">Acme Corp — London, UK</p>
+                            <h3 class="text-headline-sm font-heading">Senior Software Engineer</h3>
+                            <p class="text-body-md text-secondary font-medium">Pinch Payments, Brisbane, Queensland</p>
                         </div>
-                        <span class="date-badge">Jan 2022 — Present</span>
+                        <span class="date-badge">Jul 2025 - Present</span>
                     </div>
                     <ul class="body-list">
-                        <li>Led a team of 8 engineers to re-platform the core product onto a microservices architecture, reducing deployment time by 70%.</li>
-                        <li>Drove adoption of TypeScript and strict linting standards across 15+ repositories.</li>
-                        <li>Designed and shipped a real-time analytics dashboard processing 500k events/day using Kafka and React.</li>
+                        <li>Build online payment processing software for the APAC region, helping merchants automate invoicing, collect payments, and manage recurring billing.</li>
+                        <li>Ship production features on a platform serving thousands of Australian businesses, aligned with modern payment requirements following Pinch Payments' acquisition by Fiserv.</li>
+                        <li>Contribute to core payment products and platform improvements within a specialist engineering team focused on reliability and quality.</li>
                     </ul>
                 </article>
 
-                <!-- Job 2 -->
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">Senior Full-Stack Engineer</h3>
-                            <p class="text-body-md text-secondary font-medium">Bright Labs — Remote</p>
+                            <h3 class="text-headline-sm font-heading">Senior Software Engineer</h3>
+                            <p class="text-body-md text-secondary font-medium">Rapid Loans, Australia</p>
                         </div>
-                        <span class="date-badge">Mar 2019 — Dec 2021</span>
+                        <span class="date-badge">May 2024 - May 2025</span>
                     </div>
                     <ul class="body-list">
-                        <li>Built a multi-tenant SaaS platform from scratch using Next.js, Prisma, and AWS RDS.</li>
-                        <li>Implemented end-to-end test suites with Playwright, achieving 94% coverage across critical user flows.</li>
-                        <li>Mentored 4 junior developers through structured code review and pair-programming sessions.</li>
+                        <li>Drove full-stack delivery on internal business management software supporting loan operations, reporting, and day-to-day staff workflows.</li>
+                        <li>Shaped solution architecture and UI/UX design direction for new modules, balancing clean React/.NET patterns with practical constraints for internal users.</li>
+                        <li>Partnered with product and operations stakeholders to translate business requirements into scalable, shippable features under operational deadlines.</li>
                     </ul>
                 </article>
 
-                <!-- Job 3 -->
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
                             <h3 class="text-headline-sm font-heading">Software Engineer</h3>
-                            <p class="text-body-md text-secondary font-medium">DataStream Analytics — Manchester, UK</p>
+                            <p class="text-body-md text-secondary font-medium">Rapid Loans, Hybrid</p>
                         </div>
-                        <span class="date-badge">Jun 2016 — Feb 2019</span>
+                        <span class="date-badge">Apr 2023 - May 2024</span>
                     </div>
                     <ul class="body-list">
-                        <li>Developed Python ETL pipelines processing 2TB+ of daily financial data, improving reliability by 40%.</li>
-                        <li>Migrated on-premise infrastructure to AWS, cutting operational costs by £120k/year.</li>
-                        <li>Built internal tooling with Vue.js and FastAPI adopted by all 50 analysts in the organisation.</li>
+                        <li>Built and shipped full-stack features using React, TypeScript, .NET Core, and MUI for internal loan management tools.</li>
+                        <li>Established maintainable architecture and component patterns that supported a promotion to Senior Software Engineer within one year.</li>
                     </ul>
                 </article>
 
-                <!-- Job 4 -->
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">Junior Developer</h3>
-                            <p class="text-body-md text-secondary font-medium">Pixel &amp; Code Agency — Birmingham, UK</p>
+                            <h3 class="text-headline-sm font-heading">Frontend Engineer</h3>
+                            <p class="text-body-md text-secondary font-medium">Care for Kids, Queensland, Australia</p>
                         </div>
-                        <span class="date-badge">Sep 2014 — May 2016</span>
+                        <span class="date-badge">Aug 2021 - Apr 2023</span>
                     </div>
                     <ul class="body-list">
-                        <li>Delivered 20+ client websites using PHP, WordPress, and jQuery on tight deadlines.</li>
-                        <li>Introduced Git workflows and a deployment checklist that reduced release bugs by 60%.</li>
+                        <li>Worked across three production applications: a legacy .NET site with embedded React components, a React SPA user portal (Context API), and a Next.js app with Redux backed by ASP.NET Core services.</li>
+                        <li>Led redesign and rebuild of core features on the legacy .NET website, improving performance and satisfying SEO requirements by removing heavy libraries.</li>
+                        <li>Built a new user portal from scratch as an independent React SPA with Context API for state management.</li>
+                        <li>Maintained and extended the Next.js application, integrating frontend features with the .NET backend for search, listings, and parent-facing workflows.</li>
                     </ul>
                 </article>
 
-                <!-- Job 5 -->
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">Graduate Software Developer</h3>
-                            <p class="text-body-md text-secondary font-medium">Northgate Systems — Leeds, UK</p>
+                            <h3 class="text-headline-sm font-heading">Software Engineer</h3>
+                            <p class="text-body-md text-secondary font-medium">INKPAY, Gold Coast, Queensland</p>
                         </div>
-                        <span class="date-badge">Jul 2013 — Aug 2014</span>
+                        <span class="date-badge">Apr 2020 - Jul 2021</span>
                     </div>
                     <ul class="body-list">
-                        <li>Contributed to a legacy Java EE system serving 300k public-sector users, implementing a new self-service module.</li>
-                        <li>Wrote unit tests that uncovered 12 critical defects prior to a major public launch.</li>
+                        <li>Full-stack rebuild of a FinTech application from inception through launch with Laravel, Vue.js, and a fully redesigned MySQL database.</li>
+                        <li>Integrated third-party services including Stripe, Google, Twilio, and SendGrid across payments, authentication, messaging, and email workflows.</li>
+                        <li>Owned the project end to end, from initial design and database architecture through API development, release, and ongoing maintenance.</li>
+                        <li>Contributed native mobile development using Vue NativeScript alongside the web platform.</li>
                     </ul>
                 </article>
 
-                <!-- Job 6 -->
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">Technology Intern</h3>
-                            <p class="text-body-md text-secondary font-medium">FinTech Innovations Ltd — London, UK</p>
+                            <h3 class="text-headline-sm font-heading">Web Developer</h3>
+                            <p class="text-body-md text-secondary font-medium">ABI Interiors, Gold Coast, Queensland</p>
                         </div>
-                        <span class="date-badge">Jun 2012 — Aug 2012</span>
+                        <span class="date-badge">Mar 2020 - Apr 2020</span>
                     </div>
                     <ul class="body-list">
-                        <li>Supported development of a mobile-first trading dashboard using Backbone.js and Ruby on Rails.</li>
-                        <li>Automated a weekly reporting process using Python, saving 6 hours of manual work per week.</li>
+                        <li>Delivered front-end e-commerce solutions for a retail storefront using WordPress, WooCommerce, jQuery, PHP, HTML, and CSS.</li>
+                        <li>Partnered with the CTO and web marketing team to implement web functionality aligned with design and campaign goals.</li>
                     </ul>
                 </article>
+
+                <article class="card">
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+                        <div>
+                            <h3 class="text-headline-sm font-heading">Application Developer</h3>
+                            <p class="text-body-md text-secondary font-medium">App Factory Store, Pottsville, NSW</p>
+                        </div>
+                        <span class="date-badge">Apr 2018 - Aug 2018</span>
+                    </div>
+                    <ul class="body-list">
+                        <li>End-to-end development of mobile app features in a React Native interface, backed by AWS Lambda (Node.js) and DynamoDB.</li>
+                        <li>Built and deployed serverless services with the Serverless CLI; tested and shipped builds via Android Studio and Xcode.</li>
+                        <li>Part-time remote role alongside university studies, with full ownership from feature implementation through to production release.</li>
+                    </ul>
+                </article>
+
+                <p class="text-body-sm text-on-surface-variant pt-4 border-t border-outline-variant">
+                    Prior to 2018, my career was in financial planning and broking, as well as an entertainment business, before I retrained in software development and transitioned into engineering.
+                </p>
 
             </div>
         </section>
@@ -175,25 +256,23 @@
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">MSc Computer Science</h3>
-                            <p class="text-body-md text-secondary font-medium">University of Edinburgh — Edinburgh, UK</p>
+                            <h3 class="text-headline-sm font-heading">Bachelor of Information Technology, Software Programming</h3>
+                            <p class="text-body-md text-secondary font-medium">Southern Cross University, East Lismore, NSW</p>
                         </div>
-                        <span class="date-badge">2011 — 2013</span>
+                        <span class="date-badge">2016 - 2020</span>
                     </div>
-                    <p class="text-body-md text-on-surface-variant">Specialisation in Distributed Systems and Machine Learning. Dissertation: <em>"Optimising Consensus Algorithms for Geo-Distributed Databases."</em></p>
-                    <p class="text-body-sm text-on-surface-variant mt-1">Graduated with <strong>Distinction</strong>.</p>
+                    <p class="text-body-md text-on-surface-variant">Major in Software Development. Languages studied: C#, Visual Basic, MySQL, JavaScript, PHP, HTML, CSS, and TypeScript.</p>
+                    <p class="text-body-sm text-on-surface-variant mt-2">Additional coursework: Systems Analysis and Design; Database Systems (design, normalisation, SQL queries); Object-Oriented Program Development; Managing Software Development; Data Communications and Networks (physical network design, subnetting).</p>
                 </article>
 
                 <article class="card">
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
-                            <h3 class="text-headline-sm font-heading">BSc (Hons) Software Engineering</h3>
-                            <p class="text-body-md text-secondary font-medium">University of Manchester — Manchester, UK</p>
+                            <h3 class="text-headline-sm font-heading">Bachelor of Commerce (Finance &amp; Economics)</h3>
+                            <p class="text-body-md text-secondary font-medium">Griffith University, Brisbane, Queensland</p>
                         </div>
-                        <span class="date-badge">2008 — 2011</span>
+                        <span class="date-badge">2010 - 2013</span>
                     </div>
-                    <p class="text-body-md text-on-surface-variant">Core modules in algorithms, data structures, systems programming, and software architecture. Final-year project: <em>"A Peer-to-Peer File Sharing Protocol in C++."</em></p>
-                    <p class="text-body-sm text-on-surface-variant mt-1">First Class Honours.</p>
                 </article>
 
             </div>
@@ -202,59 +281,78 @@
         <!-- ABOUT / PERSONAL -->
         <section>
             <h2 class="section-title">A Bit About Me</h2>
-            <div class="grid md:grid-cols-3 gap-6 mt-4">
+            <div class="space-y-6 mt-4">
 
                 <div class="card">
-                    <h3 class="text-headline-sm font-heading mb-2">Hobbies &amp; Interests</h3>
-                    <p class="text-body-sm text-on-surface-variant mb-4">Time away from the keyboard is usually outdoors or with an instrument in hand.</p>
-                    <ul class="space-y-3">
-                        <li class="flex gap-3">
-                            <span class="text-lg leading-none shrink-0 pt-0.5" aria-hidden="true">⛳</span>
-                            <div>
-                                <p class="text-body-md font-medium text-on-surface">Golf</p>
-                                <p class="text-body-sm text-on-surface-variant">Weekend rounds with friends; lately focused on short game and course strategy.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-lg leading-none shrink-0 pt-0.5" aria-hidden="true">🏄</span>
-                            <div>
-                                <p class="text-body-md font-medium text-on-surface">Surfing</p>
-                                <p class="text-body-sm text-on-surface-variant">Paddling out whenever the forecast cooperates — better at reading breaks than landing airs.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-lg leading-none shrink-0 pt-0.5" aria-hidden="true">🎸</span>
-                            <div>
-                                <p class="text-body-md font-medium text-on-surface">Guitar</p>
-                                <p class="text-body-sm text-on-surface-variant">Mostly acoustic evenings at home; fingerpicking, classic rock, and whatever tab looks fun.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="text-lg leading-none shrink-0 pt-0.5" aria-hidden="true">🥾</span>
-                            <div>
-                                <p class="text-body-md font-medium text-on-surface">Hiking</p>
-                                <p class="text-body-sm text-on-surface-variant">Long day hikes and coastal paths — good boots, a map, and a packed lunch.</p>
-                            </div>
-                        </li>
-                    </ul>
+                    <h3 class="text-headline-sm font-heading mb-3">What Colleagues Say</h3>
+
+                    <div id="testimonial-carousel" class="relative">
+                        <div class="testimonial-slide active" data-index="0">
+                            <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
+                                "Mathew is a fantastic software engineer and an all-around great teammate. We worked together at Care for Kids, and from day one, he picked things up incredibly fast. No matter the challenge, he tackled it with enthusiasm and a sharp problem-solving mindset.
+                                <br><br>
+                                Beyond his technical skills, Mathew is just awesome to work with. He's easygoing, always willing to help, and has a knack for making complex tasks feel simple. Our collaboration was seamless, and I genuinely enjoyed working alongside him."
+                            </blockquote>
+                            <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Damian Karzon, Pinch Payments</p>
+                        </div>
+
+                        <div class="testimonial-slide" data-index="1">
+                            <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
+                                "I had the pleasure of working alongside Mathew for two years and can recommend him without hesitation. Throughout our time together, Mathew consistently demonstrated deep expertise in both React and .NET, delivering high-quality, robust software with a strong emphasis on clean architecture and thoughtful UI/UX design.
+                                <br><br>
+                                In his fullstack role, Mathew not only contributed exceptional code but also played a pivotal role in solution architecture and design direction. His technical proficiency, especially at Rapid Loans, is matched by his enthusiasm for continuous learning and tackling new challenges.
+                                <br><br>
+                                What really sets Mathew apart is his collaborative spirit, he's a true team player and was an invaluable asset to our team. Any organization would be fortunate to have him on board."
+                            </blockquote>
+                            <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Ali Kefayati, Rapid Loans</p>
+                        </div>
+
+                        <div class="testimonial-slide" data-index="2">
+                            <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
+                                "I worked with Mathew for a year on our product development team, and he consistently impressed me with his technical skills and collaborative approach. As a developer, he tackled complex challenges across our applications with both expertise and patience.
+                                <br><br>
+                                What I appreciated most about working with Mathew was his practical mindset. He could quickly identify potential issues and suggest workable solutions that considered both user experience and technical constraints.
+                                <br><br>
+                                Beyond his coding abilities, Mathew was simply a great teammate, always willing to explain technical concepts, help troubleshoot problems, or provide feedback when needed. Any development team would benefit from having him on board."
+                            </blockquote>
+                            <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Frederike Higgs, Rapid Loans</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between mt-6 pt-4 border-t border-outline-variant">
+                        <button
+                            type="button"
+                            id="carousel-prev"
+                            class="font-label text-label-caps text-secondary hover:text-accent transition-colors px-2 py-1"
+                            aria-label="Previous testimonial"
+                        >
+                            ← Prev
+                        </button>
+
+                        <div class="flex gap-2" role="tablist" aria-label="Testimonial navigation">
+                            <button type="button" class="carousel-dot w-2.5 h-2.5 rounded-full bg-accent transition-colors" data-index="0" aria-label="Show testimonial 1" aria-selected="true"></button>
+                            <button type="button" class="carousel-dot w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors" data-index="1" aria-label="Show testimonial 2" aria-selected="false"></button>
+                            <button type="button" class="carousel-dot w-2.5 h-2.5 rounded-full bg-outline-variant transition-colors" data-index="2" aria-label="Show testimonial 3" aria-selected="false"></button>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="carousel-next"
+                            class="font-label text-label-caps text-secondary hover:text-accent transition-colors px-2 py-1"
+                            aria-label="Next testimonial"
+                        >
+                            Next →
+                        </button>
+                    </div>
                 </div>
 
                 <div class="card">
-                    <h3 class="text-headline-sm font-heading mb-3">Goals &amp; Values</h3>
+                    <h3 class="text-headline-sm font-heading mb-3">Hobbies</h3>
                     <ul class="text-body-md text-on-surface-variant space-y-2">
-                        <li>🎯 Building software that is genuinely accessible and inclusive.</li>
-                        <li>🌍 Contributing to open-source tools that lower the barrier to entry for new developers.</li>
-                        <li>📈 Continuously improving — currently studying for AWS Solutions Architect Professional.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3 class="text-headline-sm font-heading mb-3">Other Facts</h3>
-                    <ul class="text-body-md text-on-surface-variant space-y-2">
-                        <li>🌐 Conversational Spanish; basic German.</li>
-                        <li>🤝 Regular mentor at Code First: Girls workshops.</li>
-                        <li>☕ Craft coffee enthusiast — home espresso setup.</li>
-                        <li>🐶 Dog dad to a very opinionated border collie named Stack.</li>
+                        <li>⛳ Golf</li>
+                        <li>🏄 Surfing</li>
+                        <li>🎸 Guitar</li>
+                        <li>🥾 Hiking</li>
                     </ul>
                 </div>
 
@@ -263,13 +361,44 @@
 
     </main>
 
-    <!-- ── FOOTER ──────────────────────────────────────────────── -->
-    <footer class="bg-primary-container text-on-primary-container py-8 px-6 mt-8">
-        <div class="max-w-container mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-body-sm font-label">
-            <p>&copy; 2026 Mathew Turner. All rights reserved.</p>
-            <p>Built with <span class="text-accent">♥</span> and Tailwind CSS.</p>
+    <!-- FOOTER -->
+    <footer class="bg-primary-container text-on-primary-container py-8 px-6 mt-8 text-center">
+        <div class="max-w-container mx-auto text-body-sm font-label text-center">
+            <p>&copy; 2026 Mathew Turner-Dauncey. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        (function () {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            let current = 0;
+
+            function show(index) {
+                current = (index + slides.length) % slides.length;
+
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === current);
+                });
+
+                dots.forEach((dot, i) => {
+                    const isActive = i === current;
+                    dot.classList.toggle('bg-accent', isActive);
+                    dot.classList.toggle('bg-outline-variant', !isActive);
+                    dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+            }
+
+            prevBtn.addEventListener('click', () => show(current - 1));
+            nextBtn.addEventListener('click', () => show(current + 1));
+
+            dots.forEach((dot) => {
+                dot.addEventListener('click', () => show(Number(dot.dataset.index)));
+            });
+        })();
+    </script>
 
 </body>
 </html>
