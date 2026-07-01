@@ -13,11 +13,20 @@
         h1, h2, h3 { font-family: 'Manrope', sans-serif; }
         .font-label { font-family: 'Space Grotesk', monospace; }
 
-        .testimonial-slide {
-            display: none;
+        #testimonial-carousel {
+            overflow: hidden;
+            touch-action: pan-y;
         }
-        .testimonial-slide.active {
-            display: block;
+
+        #testimonial-track {
+            display: flex;
+            transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            min-width: 100%;
         }
     </style>
 </head>
@@ -142,7 +151,7 @@
                             <h3 class="text-headline-sm font-heading">Senior Software Engineer</h3>
                             <p class="text-body-md text-secondary font-medium">Pinch Payments, Brisbane, Queensland</p>
                         </div>
-                        <span class="date-badge">Jul 2025 - Present</span>
+                        <span class="date-badge" data-start="2025-07" data-end="present">Jul 2025 - Present</span>
                     </div>
                     <ul class="body-list">
                         <li>Build online payment processing software for the APAC region, helping merchants automate invoicing, collect payments, and manage recurring billing.</li>
@@ -155,28 +164,15 @@
                     <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
                         <div>
                             <h3 class="text-headline-sm font-heading">Senior Software Engineer</h3>
-                            <p class="text-body-md text-secondary font-medium">Rapid Loans, Australia</p>
+                            <p class="text-body-md text-secondary font-medium">Rapid Loans, Gold Coast, Queensland</p>
                         </div>
-                        <span class="date-badge">May 2024 - May 2025</span>
+                        <span class="date-badge" data-start="2023-04" data-end="2025-05">Apr 2023 - May 2025</span>
                     </div>
                     <ul class="body-list">
                         <li>Drove full-stack delivery on internal business management software supporting loan operations, reporting, and day-to-day staff workflows.</li>
+                        <li>Built and shipped production features using React, TypeScript, .NET Core, and MUI for internal loan management tools.</li>
                         <li>Shaped solution architecture and UI/UX design direction for new modules, balancing clean React/.NET patterns with practical constraints for internal users.</li>
                         <li>Partnered with product and operations stakeholders to translate business requirements into scalable, shippable features under operational deadlines.</li>
-                    </ul>
-                </article>
-
-                <article class="card">
-                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
-                        <div>
-                            <h3 class="text-headline-sm font-heading">Software Engineer</h3>
-                            <p class="text-body-md text-secondary font-medium">Rapid Loans, Hybrid</p>
-                        </div>
-                        <span class="date-badge">Apr 2023 - May 2024</span>
-                    </div>
-                    <ul class="body-list">
-                        <li>Built and shipped full-stack features using React, TypeScript, .NET Core, and MUI for internal loan management tools.</li>
-                        <li>Established maintainable architecture and component patterns that supported a promotion to Senior Software Engineer within one year.</li>
                     </ul>
                 </article>
 
@@ -186,7 +182,7 @@
                             <h3 class="text-headline-sm font-heading">Frontend Engineer</h3>
                             <p class="text-body-md text-secondary font-medium">Care for Kids, Queensland, Australia</p>
                         </div>
-                        <span class="date-badge">Aug 2021 - Apr 2023</span>
+                        <span class="date-badge" data-start="2021-08" data-end="2023-04">Aug 2021 - Apr 2023</span>
                     </div>
                     <ul class="body-list">
                         <li>Worked across three production applications: a legacy .NET site with embedded React components, a React SPA user portal (Context API), and a Next.js app with Redux backed by ASP.NET Core services.</li>
@@ -202,7 +198,7 @@
                             <h3 class="text-headline-sm font-heading">Software Engineer</h3>
                             <p class="text-body-md text-secondary font-medium">INKPAY, Gold Coast, Queensland</p>
                         </div>
-                        <span class="date-badge">Apr 2020 - Jul 2021</span>
+                        <span class="date-badge" data-start="2020-04" data-end="2021-07">Apr 2020 - Jul 2021</span>
                     </div>
                     <ul class="body-list">
                         <li>Full-stack rebuild of a FinTech application from inception through launch with Laravel, Vue.js, and a fully redesigned MySQL database.</li>
@@ -218,7 +214,7 @@
                             <h3 class="text-headline-sm font-heading">Web Developer</h3>
                             <p class="text-body-md text-secondary font-medium">ABI Interiors, Gold Coast, Queensland</p>
                         </div>
-                        <span class="date-badge">Mar 2020 - Apr 2020</span>
+                        <span class="date-badge" data-start="2020-03" data-end="2020-04">Mar 2020 - Apr 2020</span>
                     </div>
                     <ul class="body-list">
                         <li>Delivered front-end e-commerce solutions for a retail storefront using WordPress, WooCommerce, jQuery, PHP, HTML, and CSS.</li>
@@ -232,7 +228,7 @@
                             <h3 class="text-headline-sm font-heading">Application Developer</h3>
                             <p class="text-body-md text-secondary font-medium">App Factory Store, Pottsville, NSW</p>
                         </div>
-                        <span class="date-badge">Apr 2018 - Aug 2018</span>
+                        <span class="date-badge" data-start="2018-04" data-end="2018-08">Apr 2018 - Aug 2018</span>
                     </div>
                     <ul class="body-list">
                         <li>End-to-end development of mobile app features in a React Native interface, backed by AWS Lambda (Node.js) and DynamoDB.</li>
@@ -286,17 +282,9 @@
                 <div class="card">
                     <h3 class="text-headline-sm font-heading mb-3">What Colleagues Say</h3>
 
-                    <div id="testimonial-carousel" class="relative">
-                        <div class="testimonial-slide active" data-index="0">
-                            <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
-                                "Mathew is a fantastic software engineer and an all-around great teammate. We worked together at Care for Kids, and from day one, he picked things up incredibly fast. No matter the challenge, he tackled it with enthusiasm and a sharp problem-solving mindset.
-                                <br><br>
-                                Beyond his technical skills, Mathew is just awesome to work with. He's easygoing, always willing to help, and has a knack for making complex tasks feel simple. Our collaboration was seamless, and I genuinely enjoyed working alongside him."
-                            </blockquote>
-                            <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Damian Karzon, Pinch Payments</p>
-                        </div>
-
-                        <div class="testimonial-slide" data-index="1">
+                    <div id="testimonial-carousel" class="relative" aria-live="polite">
+                        <div id="testimonial-track">
+                            <div class="testimonial-slide" data-index="0">
                             <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
                                 "I had the pleasure of working alongside Mathew for two years and can recommend him without hesitation. Throughout our time together, Mathew consistently demonstrated deep expertise in both React and .NET, delivering high-quality, robust software with a strong emphasis on clean architecture and thoughtful UI/UX design.
                                 <br><br>
@@ -305,9 +293,18 @@
                                 What really sets Mathew apart is his collaborative spirit, he's a true team player and was an invaluable asset to our team. Any organization would be fortunate to have him on board."
                             </blockquote>
                             <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Ali Kefayati, Rapid Loans</p>
-                        </div>
+                            </div>
 
-                        <div class="testimonial-slide" data-index="2">
+                            <div class="testimonial-slide" data-index="1">
+                            <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
+                                "Mathew is a fantastic software engineer and an all-around great teammate. We worked together at Care for Kids, and from day one, he picked things up incredibly fast. No matter the challenge, he tackled it with enthusiasm and a sharp problem-solving mindset.
+                                <br><br>
+                                Beyond his technical skills, Mathew is just awesome to work with. He's easygoing, always willing to help, and has a knack for making complex tasks feel simple. Our collaboration was seamless, and I genuinely enjoyed working alongside him."
+                            </blockquote>
+                            <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Damian Karzon, Pinch Payments</p>
+                            </div>
+
+                            <div class="testimonial-slide" data-index="2">
                             <blockquote class="text-body-md text-on-surface-variant italic border-l-2 border-accent pl-4">
                                 "I worked with Mathew for a year on our product development team, and he consistently impressed me with his technical skills and collaborative approach. As a developer, he tackled complex challenges across our applications with both expertise and patience.
                                 <br><br>
@@ -316,6 +313,7 @@
                                 Beyond his coding abilities, Mathew was simply a great teammate, always willing to explain technical concepts, help troubleshoot problems, or provide feedback when needed. Any development team would benefit from having him on board."
                             </blockquote>
                             <p class="text-body-sm text-on-surface-variant mt-3 font-medium">- Frederike Higgs, Rapid Loans</p>
+                            </div>
                         </div>
                     </div>
 
@@ -370,18 +368,51 @@
 
     <script>
         (function () {
+            function parseYearMonth(ym) {
+                const [year, month] = ym.split('-').map(Number);
+                return { year, month };
+            }
+
+            function monthDiff(start, end) {
+                return (end.year - start.year) * 12 + (end.month - start.month);
+            }
+
+            function formatDuration(totalMonths) {
+                const yrs = Math.floor(totalMonths / 12);
+                const mths = totalMonths % 12;
+                const parts = [];
+                if (yrs > 0) parts.push(yrs + ' yr');
+                if (mths > 0) parts.push(mths + ' mths');
+                return '(' + (parts.join(' ') || '0 mths') + ')';
+            }
+
+            const now = new Date();
+            const present = { year: now.getFullYear(), month: now.getMonth() + 1 };
+
+            document.querySelectorAll('.date-badge[data-start]').forEach(function (badge) {
+                const start = parseYearMonth(badge.dataset.start);
+                const end = badge.dataset.end === 'present'
+                    ? present
+                    : parseYearMonth(badge.dataset.end);
+                badge.textContent = badge.textContent.trim() + ' ' + formatDuration(monthDiff(start, end));
+            });
+        })();
+
+        (function () {
+            const carousel = document.getElementById('testimonial-carousel');
+            const track = document.getElementById('testimonial-track');
             const slides = document.querySelectorAll('.testimonial-slide');
             const dots = document.querySelectorAll('.carousel-dot');
             const prevBtn = document.getElementById('carousel-prev');
             const nextBtn = document.getElementById('carousel-next');
+            const MD_BREAKPOINT = 768;
+            const SWIPE_THRESHOLD = 50;
             let current = 0;
+            let touchStartX = 0;
 
             function show(index) {
                 current = (index + slides.length) % slides.length;
-
-                slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === current);
-                });
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
 
                 dots.forEach((dot, i) => {
                     const isActive = i === current;
@@ -391,12 +422,36 @@
                 });
             }
 
+            function isMobileViewport() {
+                return window.innerWidth < MD_BREAKPOINT;
+            }
+
             prevBtn.addEventListener('click', () => show(current - 1));
             nextBtn.addEventListener('click', () => show(current + 1));
 
             dots.forEach((dot) => {
                 dot.addEventListener('click', () => show(Number(dot.dataset.index)));
             });
+
+            carousel.addEventListener('touchstart', (event) => {
+                if (!isMobileViewport()) return;
+                touchStartX = event.touches[0].screenX;
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (event) => {
+                if (!isMobileViewport()) return;
+
+                const deltaX = event.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(deltaX) < SWIPE_THRESHOLD) return;
+
+                if (deltaX < 0) {
+                    show(current + 1);
+                } else {
+                    show(current - 1);
+                }
+            }, { passive: true });
+
+            show(0);
         })();
     </script>
 
